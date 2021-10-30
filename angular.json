@@ -16,6 +16,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale":"en-US",
+        "locales":{
+          "es":{
+            "translation":"src/locale/messages.es.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -59,6 +68,11 @@
               ],
               "outputHashing": "all"
             },
+            "es": {
+              "localize":["es"],
+              "outputPath":"dist/dual-language-app-es",
+              "i18nMissingTranslation": "error"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -75,6 +89,9 @@
           "configurations": {
             "production": {
               "browserTarget": "dual-language-app:build:production"
+            },
+            "es": {
+              "browserTarget": "dual-language-app:build:es"
             },
             "development": {
               "browserTarget": "dual-language-app:build:development"
